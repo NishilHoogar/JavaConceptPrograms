@@ -1,0 +1,86 @@
+import java.awt.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        System.out.println("Kathryn");
+
+        Car myCar = new Car(25.5, "1BC32E", Color.BLUE, true);
+        Car sallyCar = new Car(13.9, "3D2OBN", Color.BLACK, false);
+
+        System.out.println("My Car's License Plate: " + myCar.getLicensePlate());
+        System.out.println("Sally's Car License Plate: " + sallyCar.getLicensePlate());
+
+        System.out.println("My Car's Paint Color: " + myCar.getPaintColor().toString());
+        myCar.changePaintColor(Color.RED);
+        System.out.println("My Car's New Paint Color: " + myCar.getPaintColor().toString());
+
+        System.out.println("My Car Details: " + myCar);
+        System.out.println("Sally's Car Details: " + sallyCar);
+    }
+}
+
+class Car {
+
+    private double averageMilesPerGallon;
+    private String licensePlate;
+    private Color paintColor;
+    private boolean areTailingWorking;
+
+    public Car(double inputAverageMPG,
+               String inputLicensePlate,
+               Color inputPaintColor,
+               boolean inputAreTaillightsWorking) {
+        this.averageMilesPerGallon = inputAverageMPG;
+        this.licensePlate = inputLicensePlate;
+        this.paintColor = inputPaintColor;
+        this.areTailingWorking = inputAreTaillightsWorking;
+    }
+
+    public double getAverageMilesPerGallon() {
+        return averageMilesPerGallon;
+    }
+
+    public void setAverageMilesPerGallon(double averageMilesPerGallon) {
+        this.averageMilesPerGallon = averageMilesPerGallon;
+    }
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public Color getPaintColor() {
+        return paintColor;
+    }
+
+    public void setPaintColor(Color paintColor) {
+        this.paintColor = paintColor;
+    }
+
+    public boolean isAreTailingWorking() {
+        return areTailingWorking;
+    }
+
+    public void setAreTailingWorking(boolean areTailingWorking) {
+        this.areTailingWorking = areTailingWorking;
+    }
+
+    public void changePaintColor(Color newPaintColor) {
+        this.paintColor = newPaintColor;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "averageMilesPerGallon=" + averageMilesPerGallon +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", paintColor=" + paintColor +
+                ", areTailingWorking=" + areTailingWorking +
+                '}';
+    }
+}
