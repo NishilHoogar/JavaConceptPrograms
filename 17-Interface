@@ -1,0 +1,19 @@
+import java.awt.*;
+import java.lang.Math;
+import java.util.Random;
+
+public interface Pet {
+    void play();
+}
+
+public class Cat implements Pet {
+    public void play() {
+        System.out.println("The cat plays with its owner.");
+    }
+}
+
+public class Dog implements Pet {
+    public void play() {
+        System.out.println("The dog plays with its owner.");
+    }
+}
