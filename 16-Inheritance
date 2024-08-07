@@ -1,0 +1,79 @@
+import java.awt.*;
+import java.lang.Math;
+import java.util.Random;
+
+public class Insect {
+    int age;
+    int numberOfLegs;
+
+    public Insect(int age, int numberOfLegs) {
+        this.age = age;
+        this.numberOfLegs = numberOfLegs;
+    }
+
+    public void says() {
+        System.out.println("...");
+    }
+
+    public void crawl() {
+        System.out.println("The insect crawled");
+    }
+
+}
+
+class Cricket extends Insect {
+
+    double length;
+
+    public Cricket(int age, double length) {
+        super(age, 6);
+        //System.out.println(super.age);
+        this.length = length;
+    }
+
+    public void says() {
+        System.out.println("CHIRP");
+    }
+
+    public void jump() {
+        System.out.println("A cricket jumped!");
+    }
+
+}
+public class Spider extends Insect {
+
+    boolean isPoisonous;
+
+    public Spider(int age, boolean isPoisonous) {
+        super(age, 8);
+        this.isPoisonous = isPoisonous;
+    }
+
+    public void says() {
+        System.out.println("HISSSS");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Insect insect = new Insect(5, 6);
+        Spider spider = new Spider(13, true);
+        Cricket cricket = new Cricket(2, 1.25);
+
+        insect.crawl();
+        insect.says();
+
+        spider.crawl();
+        spider.says();
+
+        cricket.crawl();
+        cricket.says();
+        cricket.jump();
+
+        if (spider instanceof Insect && spider instanceof Spider) {
+            System.out.println("Spider is an insect and a spider");
+        }
+
+    }
+
+}
