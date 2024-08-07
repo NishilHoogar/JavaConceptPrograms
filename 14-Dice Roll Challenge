@@ -1,0 +1,29 @@
+import java.awt.*;
+import java.lang.Math;
+import java.util.Random;
+
+public class Dice {
+    Random rand;
+    int previousRoll = -1;
+
+    public Dice() {
+        this.rand = new Random();
+    }
+
+    public int roll() {
+        int currentRoll = this.rand.nextInt(6) + 1;
+        this.previousRoll = currentRoll;
+        return currentRoll;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Dice dice = new Dice();
+        System.out.println("Previous: " + dice.previousRoll);
+        System.out.println(dice.roll());
+        System.out.println("Previous: " + dice.previousRoll);
+        System.out.println(dice.roll());
+        System.out.println("Previous: " + dice.previousRoll);
+    }
+
+}
